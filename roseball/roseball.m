@@ -14,7 +14,10 @@ elseif nargin >= 1
         ax = varargin{2};
     end
 end
-hold(ax, 'on'); view(11, -.07); axis equal off
+hold(ax, 'on'); 
+ax.View = [11, -.07]; 
+axis(ax, 'equal')
+axis(ax, 'off')
 
 % Basic surface
 [x, t] = meshgrid((0:24)./24, (0:.5:575)./575.*20.*pi + 4*pi);
@@ -33,12 +36,12 @@ Rz1 = Rz(2*pi/5); Rz2 = Rz(pi/5);
 
 prop = {'EdgeAlpha',.05, 'EdgeColor','none', ...
         'FaceColor','interp', 'CData',H2C(h, CList)};
-surf(x, y,   h, prop{:})
-surf(x, y, - h, prop{:})
+surf(ax, x, y,   h, prop{:})
+surf(ax, x, y, - h, prop{:})
 [U, V, W] = matRotate(x, y, h, Rx1);
-for k = 1:5, [U, V, W] = matRotate(U, V, W, Rz1); surf(U, V,   W, prop{:}), end
+for k = 1:5, [U, V, W] = matRotate(U, V, W, Rz1); surf(ax, U, V,   W, prop{:}), end
 [U, V, W] = matRotate(U, V, W, Rz2);
-for k = 1:5, [U, V, W] = matRotate(U, V, W, Rz1); surf(U, V, - W, prop{:}), end
+for k = 1:5, [U, V, W] = matRotate(U, V, W, Rz1); surf(ax, U, V, - W, prop{:}), end
 
     function C = H2C(H, cL)
         X = rescale(H, 0, 1);
