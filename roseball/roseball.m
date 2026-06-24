@@ -1,4 +1,17 @@
 function roseball(varargin)
+% roseball - Create a 3D roseball visualization (创建 3D 玫瑰花球)
+%   roseball() creates a roseball with default colormap in the current axes.
+%   在当前坐标区使用默认配色创建玫瑰花球。
+%
+%   roseball(CList) creates a roseball in the current axes using the
+%   specified colormap matrix CList.
+%   在当前坐标区使用指定的配色矩阵 CList 创建玫瑰花球。
+%
+%   roseball(ax, CList) creates a roseball in the specified axes using
+%   the given colormap matrix.
+%   在指定坐标区使用给定的配色矩阵创建玫瑰花球。
+
+
 % Zhaoxu Liu / slandarer (2026). roseball 
 % (https://www.mathworks.com/matlabcentral/fileexchange/93510-roseball), 
 % MATLAB Central File Exchange. Retrieved April 15, 2026.
