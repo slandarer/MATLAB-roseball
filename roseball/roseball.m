@@ -3,6 +3,9 @@ function roseball(varargin)
 %   roseball() creates a roseball with default colormap in the current axes.
 %   在当前坐标区使用默认配色创建玫瑰花球。
 %
+%   roseball(ax) creates a roseball in the specified axes with default colormap.
+%   在指定坐标区使用默认配色创建玫瑰花球。
+%
 %   roseball(CList) creates a roseball in the current axes using the
 %   specified colormap matrix CList.
 %   在当前坐标区使用指定的配色矩阵 CList 创建玫瑰花球。
@@ -10,6 +13,13 @@ function roseball(varargin)
 %   roseball(ax, CList) creates a roseball in the specified axes using
 %   the given colormap matrix.
 %   在指定坐标区使用给定的配色矩阵创建玫瑰花球。
+%
+% Input:
+%   ax    - axes handle (optional) (坐标轴句柄，可选)
+%   CList - N×3 RGB matrix with values in [0, 1], specifying the custom
+%           colormap for the roseball. If not provided, a default colormap
+%           is used. (N×3 RGB 矩阵，数值在 [0,1] 之间，指定玫瑰花球的自定义配色。
+%           若未提供，则使用默认配色。)
 
 
 % Zhaoxu Liu / slandarer (2026). roseball 
